@@ -1,13 +1,300 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+}
+/********Grid CSS start******/
+.grid-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.grid{
+  display:grid;
+  max-width:300px;
+  width:100%;
+  padding:20px;
+  gap:20px;
+  border: 1px solid #000;
 }
+.cell{
+  background-color:transparent;
+  border:1px solid #000;
+  height:100px;
+}
+.cell-activated{
+  background-color:green;
+}
+/********Grid CSS end******/
+
+/********Traffic CSS start******/
+.traffic-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.traffic-light{
+
+  background:#222;
+  width:90px;
+  border-radius:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  box-shadow:0 0 15px #444;
+
+}
+.circle{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background-color:#333;
+  margin:10px auto;
+}
+.red-on{
+  background:#d52b1e;
+  opacity:1;
+  box-shadow:0 0 15px #d52b1e;
+}
+.yellow-on{
+  background:#ffed00;
+  opacity:1;
+  box-shadow:0 0 15px #ffed00;
+}
+.green-on{
+  background:#00bb2d;
+  opacity:1;
+  box-shadow:0 0 15px #00bb2d;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+/********Traffic CSS end******/
+/******** Countdown Timer CSS start******/
+.container-title{
+  margin:0;
+  font-size:40px;
+  text-align:center;
+}
+.container{
+  height:200px;
+  width:500px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.container-labels,
+.container-inputs,
+.container-btns{
+  display:flex;
+  justify-content:space-between;
+}
+.container-btns{
+  margin-top:20px;
+}
+.container-labels-label{
+  width:20%;
+  text-align:center;
+  font-size:30px;
+  padding:5px 10px;
+}
+.container-inputs-time{
+  justify-self:center;
+  align-self:center;
+  border:none;
+  font-size:50px;
+  width:90px;
+  height:50px;
+}
+.container-inputs-colon{
+  justify-self:center;
+    align-self:center;
+    
+  font-size:30px;
+  margin:0;
+  padding: 5px 10px;
+}
+.btn{
+  width:48%;
+  height:50px;
+  font-size:30px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  color: white;
+}
+input{
+  text-align:center;
+  outline:none;
+}
+.start{
+  background-color: green;
+}
+.stop{
+  display:none;
+  background-color: orange;
+}
+.reset{
+  background-color: orangered;
+}
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+ /* input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+} */
+/******** Countdown Timer CSS end******/
+
+/******** TicTacToe CSS start******/
+.board{
+  display:grid;
+  gap:5px;
+}
+.cell{
+  height:50px;
+  width:50px;
+  border:1px solid grey;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:600;
+}
+/******** TicTacToe CSS end******/
+
+/******** SnakeGame CSS start******/
+.snake-container{
+  height:15rem;
+  width:15rem;
+  border:1px solid black;
+  display:grid;
+  grid-template-columns:repeat(15,1fr);
+}
+
+.snake-cell{
+  border:0.5px solid black;
+}
+.snake-food{
+  background-color:red;
+  border-radius:50%;
+}
+.snake{
+  background-color:green;
+}
+
+/******** SnakeGame CSS end******/
+
+
+/******** Star CSS start******/
+.gold{
+  color:gold;
+}
+
+/******** Star CSS end******/
+
+/******** Sudoku CSS start******/
+.sudoku-row{
+  display:flex;
+}
+
+.sudoku-cell{
+  height:30px;
+  width:30px;
+  border:1px solid black;
+  resize:none;
+}
+/******** Sudoku CSS end******/
+
+/******** balloon burst CSS start******/
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Root wrapper */
+.game-root {
+  height: 100vh;
+  position: relative;
+}
+
+/* Start & End Screens */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: black;
+  color: white;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay button {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  background: #cea813;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Scoreboard */
+.scoreboard {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #cea813;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  z-index: 4;
+}
+
+/* Balloon container */
+.balloon-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Balloon */
+.balloon {
+  position: absolute;
+  bottom: -50px;
+  font-size: 100px;
+  cursor: pointer;
+  animation: floatUp linear;
+}
+
+/* Animation */
+@keyframes floatUp {
+  from {
+    bottom: -50px;
+    opacity: 1;
+  }
+  to {
+    bottom: 110%;
+    opacity: 0.5;
+  }
+}
+
+/******** balloon burst CSS end******/

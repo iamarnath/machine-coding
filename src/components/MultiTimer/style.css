@@ -1,0 +1,140 @@
+/* Multi-timer layout */
+
+.multi-timer-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: sans-serif;
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.add-timer-card {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+}
+
+.add-timer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.add-timer-label-input {
+  flex: 1 1 220px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.add-timer-time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-timer-time-input {
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.add-timer-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #1e88e5;
+  color: white;
+}
+
+/* Grid of timers */
+.timers-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.timer-card-wrapper {
+  position: relative;
+}
+
+.timer-card__remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Visual notification when timer completes */
+.timer-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #fff;
+}
+
+.timer-card--done {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.3);
+}
+
+.timer-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.timer-card__label {
+  font-weight: 600;
+}
+
+.timer-card__badge {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #2e7d32;
+  color: #fff;
+}
+
+.completion-log {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+}
+.btn-multi{
+  width:100px;
+  height:50px;
+  font-size:30px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  color: white;
+}
+
+.container-multi{
+  height:inherit;
+  width:200px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
